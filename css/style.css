@@ -1,0 +1,125 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+main{
+    background-color: rgb(240, 229, 210);
+    max-width: 1100px;
+    width: 100%;
+    margin: auto;
+    margin-top: 0%;
+    padding: 10px;
+    box-shadow: 3px 3px 5px black;
+    border-radius: 20px;
+}
+
+/* Estilos gerais */
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+}
+
+p{
+    padding: 0px 100px;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #1d5c2e;
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+li a{
+    display: flex;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 14px 16px;
+}
+
+li a:hover {
+    background-color: rgb(141, 48, 35);
+    border-radius: 20px;
+  }
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Linha do tempo */
+.timeline {
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: left;
+}
+
+.event {
+    background: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-left: 5px solid #1d5c2e;
+}
+
+.event {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+/* Galeria */
+.gallery {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.gallery img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Conquistas */
+.badges {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.badge {
+    background: #ffcc00;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+/* Rodapé */
+footer {
+    background-color: #1d5c2e;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 20px;
+}
