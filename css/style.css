@@ -6,29 +6,61 @@
     font-family: Arial, sans-serif;
 }
 
+/*Configuração de fundo flutuante*/
 main{
     background-color: rgb(240, 229, 210);
     max-width: 1100px;
-    width: 100%;
+    width: 90%;
     margin: auto;
     margin-top: 0%;
     padding: 10px;
-    box-shadow: 3px 3px 5px black;
+    box-shadow: 2px 3px 10px black;
     border-radius: 20px;
 }
 
 /* Estilos gerais */
 body {
-    background-color: #f4f4f4;
+    background-color: rgb(104, 136, 86);
     color: #333;
     text-align: center;
 }
 
+/* paragrafos */
 p{
-    padding: 0px 100px;
+    padding: 0px 2px;
+    font-size: 17px;
 }
 
-/* Cabeçalho */
+a{
+    color: black;
+}
+
+/*Parametro de todos os links sem classes*/
+a:hover{
+    color:  rgb(87, 28, 19);
+}
+
+.linknavbar{
+    display: flex;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 14px 16px;
+    font-weight: bold;
+}
+/*Parametros dos links na lista de itens da nav-bar*/
+.linknavbar:hover{
+    background-color: rgb(87, 28, 19);
+    border-radius: 20px;
+    color: white;
+}
+
+/*Parametros dos textos dos links na lista de itens da nav-bar*/
+li a{
+
+}
+
+/* Cabeçalho - Parte superior do site, onde a nav-bar está localizada*/
 header {
     background-color: #1d5c2e;
     color: white;
@@ -36,37 +68,22 @@ header {
     border-radius: 20px;
 }
 
+/*Configurações da lista não ordenada da nav-bar*/
+/* flex-wrap: wrap; - Permite que os itens quebrem linha quando necessário */
 nav ul {
     list-style: none;
     display: flex;
+    flex-wrap: wrap; 
     justify-content: center;
+    padding: 0;
 }
 
+/*Lista não ordenada*/
 ul {
-    list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow: hidden; /* quando o li passa dos limites ele some */
   }
-
-li a{
-    display: flex;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    padding: 14px 16px;
-}
-
-li a:hover {
-    background-color: rgb(141, 48, 35);
-    border-radius: 20px;
-  }
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
 
 /* Linha do tempo */
 .timeline {
@@ -75,6 +92,7 @@ nav a {
     text-align: left;
 }
 
+/*Parametros da linha do tempo*/
 .event {
     background: white;
     padding: 15px;
@@ -82,23 +100,27 @@ nav a {
     border-left: 5px solid #1d5c2e;
 }
 
+/*Parametros da linha do tempo (Animação javaScript)*/
 .event {
     opacity: 0;
-    transform: translateX(-50px);
-    transition: opacity 0.5s, transform 0.5s;
+    transform: translateX(-300px);
+    transition: opacity 0.5s, transform 1.9s;
 }
 
 /* Galeria */
 .gallery {
-    display: flex;
+    display: block;
     gap: 10px;
     justify-content: center;
+    
 }
 
 .gallery img {
-    width: 150px;
-    height: auto;
+    width: 250px;
+    height: 250px;
     border-radius: 10px;
+    object-fit: cover;
+    overflow: hidden;
 }
 
 /* Conquistas */
@@ -113,6 +135,27 @@ nav a {
     padding: 10px;
     border-radius: 10px;
     font-weight: bold;
+}
+
+#eu {
+    border-radius: 100px;
+    box-shadow: 1px 1px 10px black;
+    width: 200px;
+}
+
+.quemsoueu {
+    background: #ffffff;
+    padding: 20px;
+    box-shadow: 3px 3px 5px black;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+.homeul {
+    padding-left: 30px;
+    list-style-type: disc;
+    text-align: left;
+    margin: 20px;
 }
 
 /* Rodapé */
