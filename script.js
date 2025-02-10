@@ -1,3 +1,4 @@
+// JavaScript da linha do tempo #1 JavaScript
 document.addEventListener("DOMContentLoaded", function () {
     const events = document.querySelectorAll(".event");
 
@@ -24,4 +25,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.addEventListener("scroll", checkScroll);
     checkScroll(); // Executa no carregamento da página
+});
+
+// Voltar ao topo #2 JavaScript
+document.addEventListener("DOMContentLoaded", function() {
+    let botao = document.getElementById("voltarTopo");
+
+    window.onscroll = function() {
+        if (document.documentElement.scrollTop > 200) {
+            botao.style.display = "block"; // Mostra o botão após rolar 200px
+        } else {
+            botao.style.display = "none"; // Esconde quando volta ao topo
+        }
+    };
+
+    botao.addEventListener("click", function() {
+        window.scrollTo({ top: 0, behavior: "smooth" }); // Rola suavemente ao topo
+    });
 });
