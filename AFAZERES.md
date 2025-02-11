@@ -1,5 +1,4 @@
 Lista de objetivos:
-1. Uma tabela
 3. ítalico
 4. Comentarios no HTML
 6. Link no texto com formatação diferente do padrão?
@@ -12,4 +11,4 @@ Lista de objetivos:
 14. Inclua algum elemento gráfico usando HTML SGV
 15. Inclua pelo menos 1 vídeo do YouTube
 16. Inclua Carousel compelo menos 3 imagens (Usando BootStrap ou não)
-17. Use CSS Grid em ao menos 1 página
+17. Use CSS Grid em ao menos 1 página   
