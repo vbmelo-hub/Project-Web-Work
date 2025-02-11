@@ -1,45 +1,86 @@
-// JavaScript da linha do tempo #1 JavaScript
 document.addEventListener("DOMContentLoaded", function () {
+    // Animação da linha do tempo
     const events = document.querySelectorAll(".event");
 
     function checkScroll() {
         const triggerBottom = window.innerHeight * 0.8;
 
-        events.forEach((event, index) => {
+        events.forEach(event => {
             const eventTop = event.getBoundingClientRect().top;
-
-            if (eventTop < triggerBottom) {
+            if (eventTop < triggerBottom && event.style.opacity !== "1") {
                 event.style.opacity = "1";
                 event.style.transform = "translateX(0)";
             }
         });
 
-     // Ativar os últimos itens mesmo sem scroll extra
-     if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
-        events.forEach(event => {
-            event.style.opacity = "1";
-            event.style.transform = "translateX(0)";
-        });
+        if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
+            events.forEach(event => {
+                event.style.opacity = "1";
+                event.style.transform = "translateX(0)";
+            });
+        }
     }
-}
 
     window.addEventListener("scroll", checkScroll);
-    checkScroll(); // Executa no carregamento da página
+    checkScroll(); // Executa no carregamento
 });
 
-// Voltar ao topo #2 JavaScript
+// Botão de voltar ao topo
 document.addEventListener("DOMContentLoaded", function() {
-    let botao = document.getElementById("voltarTopo");
+    const botao = document.getElementById("voltarTopo");
 
-    window.onscroll = function() {
-        if (document.documentElement.scrollTop > 200) {
-            botao.style.display = "block"; // Mostra o botão após rolar 200px
-        } else {
-            botao.style.display = "none"; // Esconde quando volta ao topo
-        }
-    };
+    function toggleButton() {
+        botao.style.display = window.scrollY > 200 ? "block" : "none";
+    }
+
+    window.addEventListener("scroll", toggleButton);
 
     botao.addEventListener("click", function() {
-        window.scrollTo({ top: 0, behavior: "smooth" }); // Rola suavemente ao topo
+        window.scrollTo({ top: 0, behavior: "smooth" });
     });
+
+    toggleButton(); // Garante que o botão não apareça incorretamente no carregamento
+});
+
+// Carrossel de imagens
+document.addEventListener("DOMContentLoaded", function () {
+    let index = 0;
+    const images = document.querySelector(".carousel-images");
+    const totalSlides = document.querySelectorAll(".carousel-images img").length;
+    const nextButton = document.getElementById("next");
+    const prevButton = document.getElementById("prev");
+    let interval;
+
+    function showSlide() {
+        images.style.transform = `translateX(${-index * 100}%)`;
+    }
+
+    function nextSlide() {
+        index = (index + 1) % totalSlides;
+        showSlide();
+    }
+
+    function prevSlide() {
+        index = (index - 1 + totalSlides) % totalSlides;
+        showSlide();
+    }
+
+    nextButton.addEventListener("click", () => {
+        clearInterval(interval);
+        nextSlide();
+        startAutoSlide();
+    });
+
+    prevButton.addEventListener("click", () => {
+        clearInterval(interval);
+        prevSlide();
+        startAutoSlide();
+    });
+
+    function startAutoSlide() {
+        clearInterval(interval);
+        interval = setInterval(nextSlide, 5000);
+    }
+
+    startAutoSlide();
 });

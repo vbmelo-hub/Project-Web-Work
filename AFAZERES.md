@@ -1,8 +1,6 @@
 Lista de objetivos:
 3. ítalico
-4. Comentarios no HTML
 6. Link no texto com formatação diferente do padrão?
-7. Layout completo usando Flexbox, Grid ou (e) Float.
 9. Dropdowns
 10. Formulários, com id, name, label e action.
 11. 1 funcionalidades JavaScript.

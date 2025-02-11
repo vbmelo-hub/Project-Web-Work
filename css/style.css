@@ -217,6 +217,69 @@ a:hover{
     background-color: #1d5c2e;
 }
 
+/*Carrossel de imagens*/
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 300px; /* Ajuste conforme necessário */
+    overflow: visible; /* Permite que os botões fiquem fora do container */
+    margin: auto;
+}
+
+.carousel-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images img {
+
+    flex-shrink: 0;
+}
+
+#acre{
+    width: 200px;
+}
+
+button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    z-index: 10; /* Garante que os botões fiquem na frente */
+}
+
+/* Move os botões para fora da imagem */
+#prev {
+    left: -50px; /* Afasta o botão da imagem */
+}
+
+#next {
+    right: -50px; /* Afasta o botão da imagem */
+}
+
+/* Para evitar problemas em telas pequenas */
+@media (max-width: 500px) {
+    #prev {
+        left: -30px;
+    }
+    #next {
+        right: -30px;
+    }
+}
+
+
 /* Rodapé */
 footer {
     background-color: #1d5c2e;
