@@ -10,16 +10,22 @@
     line-height: 1.5;
 }
 
+/* Cabeçalho - Parte superior do site, onde a nav-bar está localizada*/
+header {
+    background-color: #1d5c2e;
+    color: white;
+    padding: 1px;
+}
+
 /*Configuração de fundo flutuante*/
-main{
+main {
     display: flexbox;
     background-color: rgb(240, 229, 210);
     max-width: 1100px;
     width: 90%;
     margin: auto;
-    margin-top: 0%;
+    margin-top: 20px;
     padding: 10px;
-    box-shadow: 1px 1px 10px black;
     border-radius: 20px;
 }
 
@@ -31,38 +37,38 @@ body {
 }
 
 /*Tabela*/
-table, th, td {
+table,
+th,
+td {
     border: 1px solid black;
     border-collapse: collapse;
     margin: auto;
     padding: 10px;
-  }
+}
 
-  th, td{
+th,
+td {
     background-color: white;
-  }
+}
 
 /* paragrafos */
-p{
+p {
     padding: 0px 2px;
     font-size: 17px;
 }
 
-a{
+a {
     color: black;
-}
-
-/*Parametros dos textos dos links na lista de itens da nav-bar*/
-a{
     text-decoration: none;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif; /* Altera a fonte */
+    padding: 5px 5px; /* Espaçamento interno */
+    border-radius: 5px; /* Bordas arredondadas */
 }
 
-/* Cabeçalho - Parte superior do site, onde a nav-bar está localizada*/
-header {
-    background-color: #1d5c2e;
-    color: white;
-    padding: 10px;
-    border-radius: 20px;
+a:hover{
+    text-decoration: underline;
+    background-color: #e0e0e0;
 }
 
 /*Configurações da lista não ordenada da nav-bar*/
@@ -70,25 +76,63 @@ header {
 nav ul {
     list-style: none;
     display: flex;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     justify-content: center;
     padding: 0;
-}
-
-/*Lista não ordenada*/
-ul {
     margin: 0;
     padding: 0;
     overflow: hidden; /* quando o li passa dos limites ele some */
-  }
+}
 
-  /*Tabelas*/
+/*Tabelas*/
 table {
     margin-bottom: 30px;
 }
 
+form {
+    max-width: 500px;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #333;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#forms {
+    padding: 10px 20px;
+    background-color: #1d5c2e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 auto;
+}
+
+button:hover {
+    background-color: #155d2c;
+}
+
+
 /* Linha do tempo */
 .timeline {
+    display: grid;
     max-width: 600px;
     margin: 20px auto;
     text-align: left;
@@ -96,6 +140,7 @@ table {
 
 /*Parametros da linha do tempo*/
 .event {
+    display: grid;
     background: white;
     padding: 15px;
     margin: 10px 0;
@@ -114,7 +159,7 @@ table {
     display: block;
     gap: 10px;
     justify-content: center;
-    
+
 }
 
 .gallery img {
@@ -162,11 +207,11 @@ table {
 }
 
 /*Parametro de todos os links sem classes*/
-a:hover{
-    color:  rgb(87, 28, 19);
+a:hover {
+    color: rgb(87, 28, 19);
 }
 
-.linknavbar{
+.linknavbar {
     display: flex;
     color: white;
     text-align: center;
@@ -174,13 +219,18 @@ a:hover{
     padding: 14px 16px;
     font-weight: bold;
     font-family: "montserrat", sans-serif;
-    
+    margin: 10px;
+    background-color: #207637;
+    border-radius: 10px;
 }
+
 /*Parametros dos links na lista de itens da nav-bar*/
-.linknavbar:hover{
+.linknavbar:hover {
     background-color: rgb(87, 28, 19);
-    border-radius: 20px;
+    border-radius: 10px;
     color: white;
+    box-shadow: 1px 1px 8px black;
+    transition: 0.7s;
 }
 
 .distintivos {
@@ -202,14 +252,17 @@ a:hover{
     cursor: pointer;
     text-align: center;
     transition: background 0.3s ease;
-    display: none; /* Oculto até a rolagem */
+    display: none;
+    /* Oculto até a rolagem */
 }
 
 /* Ajuste para telas menores */
 @media (max-width: 600px) {
     .botao-topo {
-        right: 20px; /* Mantém mais próximo da borda e evita que vá para o meio */
-        bottom: 15px; /* Opcional: pode subir um pouco para não sobrepor elementos */
+        right: 20px;
+        /* Mantém mais próximo da borda e evita que vá para o meio */
+        bottom: 15px;
+        /* Opcional: pode subir um pouco para não sobrepor elementos */
     }
 }
 
@@ -223,8 +276,10 @@ a:hover{
     align-items: center;
     justify-content: center;
     position: relative;
-    width: 300px; /* Ajuste conforme necessário */
-    overflow: visible; /* Permite que os botões fiquem fora do container */
+    width: 300px;
+    /* Ajuste conforme necessário */
+    overflow: visible;
+    /* Permite que os botões fiquem fora do container */
     margin: auto;
 }
 
@@ -236,14 +291,10 @@ a:hover{
 .carousel-images {
     display: flex;
     transition: transform 0.5s ease-in-out;
-}
-
-.carousel-images img {
-
     flex-shrink: 0;
 }
 
-#acre{
+#acre {
     width: 200px;
 }
 
@@ -257,16 +308,19 @@ button {
     top: 50%;
     transform: translateY(-50%);
     font-size: 20px;
-    z-index: 10; /* Garante que os botões fiquem na frente */
+    z-index: 10;
+    /* Garante que os botões fiquem na frente */
 }
 
 /* Move os botões para fora da imagem */
 #prev {
-    left: -50px; /* Afasta o botão da imagem */
+    left: -50px;
+    /* Afasta o botão da imagem */
 }
 
 #next {
-    right: -50px; /* Afasta o botão da imagem */
+    right: -50px;
+    /* Afasta o botão da imagem */
 }
 
 /* Para evitar problemas em telas pequenas */
@@ -274,6 +328,7 @@ button {
     #prev {
         left: -30px;
     }
+
     #next {
         right: -30px;
     }
@@ -286,5 +341,4 @@ footer {
     color: white;
     padding: 10px;
     margin-top: 20px;
-    border-radius: 20px;
 }

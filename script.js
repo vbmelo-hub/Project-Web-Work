@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const events = document.querySelectorAll(".event");
 
     function checkScroll() {
-        const triggerBottom = window.innerHeight * 0.8;
+        const triggerBottom = window.innerHeight * 0.9;
 
         events.forEach(event => {
             const eventTop = event.getBoundingClientRect().top;
@@ -83,4 +83,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     startAutoSlide();
+});
+
+document.getElementById("formulario-contato").addEventListener("submit", function(event) {
+    event.preventDefault(); // Impede o envio padrão do formulário
+
+    // Aqui você pode adicionar a lógica para envio de dados via AJAX ou qualquer outra ação.
+    
+    // Exibindo mensagem de sucesso
+    alert("Mensagem enviada com sucesso!");
+    
+    // Limpar os campos do formulário após envio
+    document.getElementById("formulario-contato").reset();
 });
