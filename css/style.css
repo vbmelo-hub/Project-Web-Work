@@ -27,10 +27,15 @@ main {
     margin-top: 20px;
     padding: 10px;
     border-radius: 20px;
+    flex: 1;
 }
 
 /* Estilo do corpo */
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
     background-color: rgb(104, 136, 86);
     color: #333;
     text-align: center;
@@ -58,6 +63,7 @@ p {
 }
 
 a {
+    font-style: italic;
     color: black;
     text-decoration: none;
     font-weight: bold;
@@ -66,42 +72,14 @@ a {
     border-radius: 5px; /* Bordas arredondadas */
 }
 
+/*Parametro de todos os links sem classes*/
 a:hover{
     text-decoration: underline;
     background-color: #e0e0e0;
+    color: rgb(87, 28, 19);
 }
 
-/*Tabelas*/
-table {
-    margin-bottom: 30px;
-}
-
-form {
-    max-width: 500px;
-    margin: auto;
-    margin-bottom: 30px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 14px;
-    color: #333;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    max-width: 450px;
-}
-
+/*Parametro da lista não ordenada*/
 nav ul {
     list-style: none;
     display: flex;
@@ -120,6 +98,8 @@ nav ul {
     cursor: pointer;
     color: white;
     padding: 10px;
+    width: 40px;
+    margin: auto;
 }
 
 /* Esconde o menu padrão em telas menores */
@@ -135,11 +115,6 @@ nav ul {
         left: 0;
         width: 100%;
         background-color: #1d5c2e;
-        text-align: center;
-    }
-
-    .menu li {
-        padding: 10px;
     }
 
     .menu.ativo {
@@ -223,7 +198,7 @@ nav ul {
 .quemsoueu {
     background: #ffffff;
     padding: 20px;
-    box-shadow: 3px 3px 5px black;
+    box-shadow: 3px 3px 15px rgba(146, 139, 128, 0);
     border-radius: 20px;
     margin-bottom: 30px;
 }
@@ -235,18 +210,14 @@ nav ul {
     margin: 20px;
 }
 
-/*Parametro de todos os links sem classes*/
-a:hover {
-    color: rgb(87, 28, 19);
-}
-
+/*Parametro dos links da nav bar*/
 .linknavbar {
+    font-style: normal;
     display: flex;
     color: white;
     text-align: center;
     text-decoration: none;
     padding: 14px 16px;
-    font-weight: bold;
     font-family: "montserrat", sans-serif;
     margin: 10px;
     background-color: #207637;
@@ -255,11 +226,11 @@ a:hover {
 
 /*Parametros dos links na lista de itens da nav-bar*/
 .linknavbar:hover {
-    background-color: rgb(87, 28, 19);
+    background-color: #5C411D;
     border-radius: 10px;
     color: white;
     box-shadow: 1px 1px 8px black;
-    transition: 0.7s;
+    transition: 0.5s;
 }
 
 .distintivos {
@@ -299,74 +270,73 @@ a:hover {
     background-color: #1d5c2e;
 }
 
+/*Tabelas*/
+table {
+    margin-bottom: 30px;
+}
+
+form {
+    max-width: 500px;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #333;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 450px;
+}
+
 /*Carrossel de imagens*/
 .carousel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    width: 300px;
-    /* Ajuste conforme necessário */
-    overflow: visible;
-    /* Permite que os botões fiquem fora do container */
+    width: 250px;
     margin: auto;
 }
 
-.carousel-container {
+.carousel-control-prev {
+    background-color: #00000017;
+}
+
+.carousel-control-next {    
+    background-color: #00000017;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporção 16:9 */
+    height: 0;
     overflow: hidden;
-    width: 100%;
+    max-width: 100%;
+    border-radius: 20px;
 }
 
-.carousel-images {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    flex-shrink: 0;
-}
-
-#acre {
-    width: 200px;
-}
-
-button {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 15px;
-    cursor: pointer;
+.video-container iframe {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 20px;
-    z-index: 10; /* Garante que os botões fiquem na frente */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
-
-/* Move os botões para fora da imagem */
-#prev {
-    left: -50px;
-    /* Afasta o botão da imagem */
-}
-
-#next {
-    right: -50px;
-    /* Afasta o botão da imagem */
-}
-
-/* Para evitar problemas em telas pequenas */
-@media (max-width: 500px) {
-    #prev {
-        left: -30px;
-    }
-
-    #next {
-        right: -30px;
-    }
-}
-
 
 /* Rodapé */
 footer {
     background-color: #1d5c2e;
     color: white;
     padding: 10px;
+    text-align: center;
     margin-top: 20px;
 }

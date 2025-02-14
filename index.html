@@ -8,6 +8,9 @@
     <!--Responsividade-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
     <!--Favicon-->
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 
@@ -27,15 +30,19 @@
 
 <body>
     <!--Nav bar-->
-    <header id="navbar">
+    <header>
         <nav>
-            <i id="menu-hamburger" class="material-symbols-outlined" onclick="toggleMenu()">menu</i>
+            <svg id="menu-hamburger" onclick="toggleMenu()" width="40" height="40" viewBox="0 0 100 80" fill="white">
+                <rect width="100" height="20"></rect>
+                <rect y="30" width="100" height="20"></rect>
+                <rect y="60" width="100" height="20"></rect>
+            </svg>            
             <ul class="menu">
                 <li><a class="linknavbar" href="index.html">Home</a></li>
                 <li><a class="linknavbar" href="linhadotempo.html">Linha do tempo</a></li>
                 <li><a class="linknavbar" href="conquistas.html">Conquistas e Insígnias</a></li>
                 <li><a class="linknavbar" href="galeria.html">Galeria</a></li>
-                <li><a class="linknavbar" href="#amigos.html">Amigos e Chefes</a></li>
+                <li><a class="linknavbar" href="guanabara.html">Mestre</a></li>
             </ul>
         </nav>
     </header>
@@ -127,21 +134,34 @@
             <button id="forms" type="submit">Enviar</button>
         </form>
 
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/img-carrossel/Escoteiros-do-Brasil.png" class="d-block w-100" alt="...">
+                </div>
 
-        <!--Corrossel de fotos-->
-        <div class="carousel">
-            <div class="carousel-container">
-                <div class="carousel-images">
-                    <img src="images/img-carrossel/Escoteiros-do-Brasil.png" alt="Imagem 1"
-                        title="Logo dos Escoteiros do Brasil">
-                    <img src="images/img-carrossel/pioneiro.png" alt="Imagem 2" title="Símbolo do ramo Pioneiro">
-                    <img id="acre" src="images/img-carrossel/Bandeira_do_Acre.png" alt="Imagem 3"
-                        title="Bandeira do Acre">
+                <div class="carousel-item">
+                    <img src="images/img-carrossel/pioneiro.png" class="d-block w-100" alt="...">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="images/img-carrossel/Bandeira_do_Acre.png" class="d-block w-100" alt="...">
                 </div>
             </div>
-            <button id="prev">❮</button>
-            <button id="next">❯</button>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
+
     </main>
 
     <!--Rodapé-->
@@ -153,6 +173,9 @@
     <div class="botao-topo" id="voltarTopo">▲</div>
 
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
