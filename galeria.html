@@ -19,22 +19,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <title>Linha do tempo</title>
 </head>
-    <body>
-        <!--Barra de navegação-->
-        <header id="navbar">
-            <nav>
-                <ul>
-                    <li><a class="linknavbar" href="index.html">Home</a></li>
-                    <li><a class="linknavbar" href="linhadotempo.html">Linha do tempo</a></li>
-                    <li><a class="linknavbar" href="conquistas.html">Conquistas e Insígnias</a></li>
-                    <li><a class="linknavbar" href="galeria.html">Galeria</a></li>
-                    <li><a class="linknavbar" href="#amigos.html">Amigos e Chefes</a></li>
-                </ul>
-            </nav>
-        </header>
-        <main>
+
+<body>
+    <!--Nav bar-->
+    <header id="navbar">
+        <nav>
+            <i id="menu-hamburger" class="material-symbols-outlined" onclick="toggleMenu()">menu</i>
+            <ul class="menu">
+                <li><a class="linknavbar" href="index.html">Home</a></li>
+                <li><a class="linknavbar" href="linhadotempo.html">Linha do tempo</a></li>
+                <li><a class="linknavbar" href="conquistas.html">Conquistas e Insígnias</a></li>
+                <li><a class="linknavbar" href="galeria.html">Galeria</a></li>
+                <li><a class="linknavbar" href="#amigos.html">Amigos e Chefes</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
         <!--Inicio do conteudo da pagina-->
         <h1>Galeria de fotos</h1>
         <section id="galeria">
@@ -79,13 +83,14 @@
         </section>
     </main>
 
-        <!--Rodapé-->
-        <footer>
-            <p>@2025 Feito com ❤️ por Vinícius Barros de Melo | Sempre Alerta para Servir!</p>
-        </footer>
+    <!--Rodapé-->
+    <footer>
+        <p>@2025 Feito com ❤️ por Vinícius Barros de Melo | Sempre Alerta para Servir!</p>
+    </footer>
 
-        <!--Botão de voltar ao topo-->
-        <div class="botao-topo" id="voltarTopo">▲</div>
-        <script src="script.js"></script>
-    </body>
+    <!--Botão de voltar ao topo-->
+    <div class="botao-topo" id="voltarTopo">▲</div>
+    <script src="script.js"></script>
+</body>
+
 </html>
