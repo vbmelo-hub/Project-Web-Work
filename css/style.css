@@ -19,7 +19,7 @@ header {
 
 /*Configuração de fundo flutuante*/
 main {
-    display: flexbox;
+    display: block;
     background-color: rgb(240, 229, 210);
     max-width: 1100px;
     width: 90%;
@@ -71,19 +71,6 @@ a:hover{
     background-color: #e0e0e0;
 }
 
-/*Configurações da lista não ordenada da nav-bar*/
-/* flex-wrap: wrap; - Permite que os itens quebrem linha quando necessário */
-nav ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-    padding: 0;
-    overflow: hidden; /* quando o li passa dos limites ele some */
-}
-
 /*Tabelas*/
 table {
     margin-bottom: 30px;
@@ -112,9 +99,57 @@ input, textarea {
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    max-width: 450px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* quando o li passa dos limites ele some */
+}
+
+/* Estiliza o botão do menu hambúrguer */
+#menu-hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    padding: 10px;
+}
+
+/* Esconde o menu padrão em telas menores */
+@media screen and (max-width: 999px) {
+    #menu-hamburger {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: relative;
+        left: 0;
+        width: 100%;
+        background-color: #1d5c2e;
+        text-align: center;
+    }
+
+    .menu li {
+        padding: 10px;
+    }
+
+    .menu.ativo {
+        display: flex;
+    }
 }
 
 #forms {
+    position: relative;
+    margin-top: 20px;
     padding: 10px 20px;
     background-color: #1d5c2e;
     color: white;
@@ -122,13 +157,7 @@ input, textarea {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    margin: 0 auto;
 }
-
-button:hover {
-    background-color: #155d2c;
-}
-
 
 /* Linha do tempo */
 .timeline {
@@ -308,8 +337,7 @@ button {
     top: 50%;
     transform: translateY(-50%);
     font-size: 20px;
-    z-index: 10;
-    /* Garante que os botões fiquem na frente */
+    z-index: 10; /* Garante que os botões fiquem na frente */
 }
 
 /* Move os botões para fora da imagem */

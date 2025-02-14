@@ -96,3 +96,7 @@ document.getElementById("formulario-contato").addEventListener("submit", functio
     // Limpar os campos do formulário após envio
     document.getElementById("formulario-contato").reset();
 });
+
+function toggleMenu() {
+    document.querySelector(".menu").classList.toggle("ativo");
+}

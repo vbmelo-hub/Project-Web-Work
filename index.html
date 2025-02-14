@@ -20,6 +20,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
 
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
     <title>My life in the scout movement</title>
 </head>
 
@@ -27,7 +29,8 @@
     <!--Nav bar-->
     <header id="navbar">
         <nav>
-            <ul>
+            <i id="menu-hamburger" class="material-symbols-outlined" onclick="toggleMenu()">menu</i>
+            <ul class="menu">
                 <li><a class="linknavbar" href="index.html">Home</a></li>
                 <li><a class="linknavbar" href="linhadotempo.html">Linha do tempo</a></li>
                 <li><a class="linknavbar" href="conquistas.html">Conquistas e Insígnias</a></li>
@@ -111,19 +114,19 @@
             <!-- Campo de nome -->
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required>
-            
+
             <!-- Campo de email -->
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
-        
+
             <!-- Campo de mensagem -->
             <label for="mensagem">Mensagem:</label>
             <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
-        
+
             <!-- Botão de envio -->
             <button id="forms" type="submit">Enviar</button>
         </form>
-        
+
 
         <!--Corrossel de fotos-->
         <div class="carousel">
