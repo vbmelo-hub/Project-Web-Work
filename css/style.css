@@ -63,6 +63,7 @@ body {
     background-color: rgb(255, 255, 255);
     color: #333;
     text-align: center;
+    min-height: 100vh;
 }
 
 /*Tabela*/
@@ -358,17 +359,22 @@ input, textarea {
 .video-container {
     position: relative;
     padding-bottom: 56.25%; /* Proporção 16:9 */
-    height: 0;
+    width: 100%; /* Faz o contêiner ocupar toda a largura disponível */
+    max-width: 1920px; /* Define uma largura máxima para não ficar muito grande */
+    margin: auto; /* Centraliza o contêiner */
+    max-height: 1080px;
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
     overflow: hidden;
-    max-width: 100%;
 }
 
 .video-container iframe {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100%; /* Faz o iframe ocupar toda a largura do contêiner */
+    height: 100%; /* Faz o iframe ocupar toda a altura do contêiner */
 }
 
  /* Estilos do dropdown */
@@ -423,7 +429,7 @@ footer {
     color: white;
     padding: 10px;
     text-align: center;
-    margin-top: 20px;
+    margin-top: auto;
 }
 
 footer p {
