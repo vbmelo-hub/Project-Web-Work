@@ -1,3 +1,9 @@
+// Menu burguer
+function toggleMenu() {
+    document.querySelector(".menu").classList.toggle("ativo");
+}
+
+//Linha do tempo
 document.addEventListener("DOMContentLoaded", function () {
     // Animação da linha do tempo
     const events = document.querySelectorAll(".event");
@@ -58,11 +64,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-// Menu burguer
-function toggleMenu() {
-    document.querySelector(".menu").classList.toggle("ativo");
-}
-
 // Aguarde o DOM carregar antes de executar o script
 document.addEventListener("DOMContentLoaded", function () {
     const dropdownBtn = document.querySelector('.dropdown-btn');
@@ -74,4 +75,41 @@ document.addEventListener("DOMContentLoaded", function () {
             dropdownContent.classList.toggle('show');
         });
     }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Captura o formulário
+    const formulario = document.getElementById("formulario-contato");
+
+    // Verifica se o formulário existe na página antes de executar o restante do código
+    if (!formulario) {
+        return; // Se o formulário não existir, interrompe a execução do script
+    }
+
+    // Cria a mensagem de confirmação
+    const mensagemEnviada = document.createElement("p");
+    mensagemEnviada.textContent = "Sua mensagem foi enviada com sucesso!";
+    mensagemEnviada.style.color = "green";
+    mensagemEnviada.style.fontWeight = "bold";
+    mensagemEnviada.style.display = "none";
+    mensagemEnviada.style.padding = "10px"
+
+    // Insere a mensagem no formulário, logo após o botão
+    formulario.appendChild(mensagemEnviada);
+
+    // Adiciona o evento de submissão ao formulário
+    formulario.addEventListener("submit", function (event) {
+        event.preventDefault(); // Impede o envio real do formulário
+
+        // Exibe a mensagem
+        mensagemEnviada.style.display = "block";
+
+        // Limpa os campos do formulário após o envio
+        formulario.reset();
+
+        // Oculta a mensagem após alguns segundos
+        setTimeout(() => {
+            mensagemEnviada.style.display = "none";
+        }, 5000); // Esconde após 5 segundos
+    });
 });

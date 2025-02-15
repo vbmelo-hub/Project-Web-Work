@@ -13,7 +13,32 @@
 /* Cabeçalho - Parte superior do site, onde a nav-bar está localizada*/
 header {
     background-color: #9FB83B;
-    padding: 1px;
+    height: 80px;
+}
+
+#navbar h1 {
+    display: flex;
+    position: absolute;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    margin: 25px;
+    margin-left: 100px;
+    font-weight: normal;
+}
+
+#navbar img {
+    display: flex;
+    position: relative;
+    margin-right: 15px;
+    z-index: 0;
+    width: 30px;
+}
+
+@media (max-width: 1280px) {
+    #navbar h1 {
+        display: none;
+    }
 }
 
 /*Configuração de fundo flutuante*/
@@ -95,9 +120,9 @@ nav ul {
     display: none;
     font-size: 30px;
     cursor: pointer;
-    padding: 10px;
-    width: 240px;
+    width: 25px;
     margin: auto;
+    margin-top: 20px;
 }
 
 /* Esconde o menu padrão em telas menores */
@@ -114,6 +139,8 @@ nav ul {
         width: 100%;
         box-shadow: 3px 3px 15px #46521a88;
         background-color: #9FB83B;
+        margin-top: 10px;
+        z-index: 10000;
     }
 
     .menu.ativo {
@@ -251,7 +278,7 @@ nav ul {
     bottom: 20px;
     right: 40px;
     padding: 12px 16px;
-    background-color: #000000;
+    background-color: #98A321;
     color: white;
     font-size: 14px;
     font-weight: bold;
@@ -275,8 +302,13 @@ nav ul {
 }
 
 .botao-topo:hover {
-    background-color: #1d5c2e;
+    background-color: #B8483B;
 }
+
+table {
+    max-width: 100%;
+    overflow-x: auto;
+  }
 
 /*Tabelas*/
 table {
@@ -329,7 +361,6 @@ input, textarea {
     height: 0;
     overflow: hidden;
     max-width: 100%;
-    border-radius: 20px;
 }
 
 .video-container iframe {
