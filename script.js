@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     window.addEventListener("scroll", checkScroll);
-    checkScroll(); // Executa no carregamento
+    checkScroll();
 });
 
 // Botão de voltar ao topo
@@ -39,64 +39,39 @@ document.addEventListener("DOMContentLoaded", function() {
         window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-    toggleButton(); // Garante que o botão não apareça incorretamente no carregamento
+    toggleButton();
 });
 
-// Carrossel de imagens
-document.addEventListener("DOMContentLoaded", function () {
-    let index = 0;
-    const images = document.querySelector(".carousel-images");
-    const totalSlides = document.querySelectorAll(".carousel-images img").length;
-    const nextButton = document.getElementById("next");
-    const prevButton = document.getElementById("prev");
-    let interval;
+// Forms
+document.addEventListener("DOMContentLoaded", function() {
+    // Verifique se o botão de dropdown existe na página
+    const dropdownBtn = document.querySelector('.dropdown-btn');
 
-    function showSlide() {
-        images.style.transform = `translateX(${-index * 100}%)`;
+    // Só adicionar o event listener se o botão existir
+    if (dropdownBtn) {
+        const dropdownContent = document.querySelector('.dropdown-content');
+
+        dropdownBtn.addEventListener('click', () => {
+            // Alterna a visibilidade do conteúdo do dropdown
+            dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+        });
     }
-
-    function nextSlide() {
-        index = (index + 1) % totalSlides;
-        showSlide();
-    }
-
-    function prevSlide() {
-        index = (index - 1 + totalSlides) % totalSlides;
-        showSlide();
-    }
-
-    nextButton.addEventListener("click", () => {
-        clearInterval(interval);
-        nextSlide();
-        startAutoSlide();
-    });
-
-    prevButton.addEventListener("click", () => {
-        clearInterval(interval);
-        prevSlide();
-        startAutoSlide();
-    });
-
-    function startAutoSlide() {
-        clearInterval(interval);
-        interval = setInterval(nextSlide, 5000);
-    }
-
-    startAutoSlide();
 });
 
-document.getElementById("formulario-contato").addEventListener("submit", function(event) {
-    event.preventDefault(); // Impede o envio padrão do formulário
-
-    // Aqui você pode adicionar a lógica para envio de dados via AJAX ou qualquer outra ação.
-    
-    // Exibindo mensagem de sucesso
-    alert("Mensagem enviada com sucesso!");
-    
-    // Limpar os campos do formulário após envio
-    document.getElementById("formulario-contato").reset();
-});
-
+// Menu burguer
 function toggleMenu() {
     document.querySelector(".menu").classList.toggle("ativo");
 }
+
+// Aguarde o DOM carregar antes de executar o script
+document.addEventListener("DOMContentLoaded", function () {
+    const dropdownBtn = document.querySelector('.dropdown-btn');
+    const dropdownContent = document.querySelector('.dropdown-content');
+
+    // Verifica se os elementos existem antes de adicionar o evento
+    if (dropdownBtn && dropdownContent) {
+        dropdownBtn.addEventListener('click', () => {
+            dropdownContent.classList.toggle('show');
+        });
+    }
+});

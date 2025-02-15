@@ -12,21 +12,20 @@
 
 /* Cabeçalho - Parte superior do site, onde a nav-bar está localizada*/
 header {
-    background-color: #1d5c2e;
-    color: white;
+    background-color: #9FB83B;
     padding: 1px;
 }
 
 /*Configuração de fundo flutuante*/
 main {
     display: block;
-    background-color: rgb(240, 229, 210);
+    background-color: #3B70B8;
     max-width: 1100px;
     width: 90%;
     margin: auto;
     margin-top: 20px;
     padding: 10px;
-    border-radius: 20px;
+    border-radius: 0px;
     flex: 1;
 }
 
@@ -36,7 +35,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
-    background-color: rgb(104, 136, 86);
+    background-color: rgb(255, 255, 255);
     color: #333;
     text-align: center;
 }
@@ -76,7 +75,7 @@ a {
 a:hover{
     text-decoration: underline;
     background-color: #e0e0e0;
-    color: rgb(87, 28, 19);
+    color: #B8483B;
 }
 
 /*Parametro da lista não ordenada*/
@@ -96,9 +95,8 @@ nav ul {
     display: none;
     font-size: 30px;
     cursor: pointer;
-    color: white;
     padding: 10px;
-    width: 40px;
+    width: 240px;
     margin: auto;
 }
 
@@ -114,7 +112,8 @@ nav ul {
         position: relative;
         left: 0;
         width: 100%;
-        background-color: #1d5c2e;
+        box-shadow: 3px 3px 15px #46521a88;
+        background-color: #9FB83B;
     }
 
     .menu.ativo {
@@ -126,12 +125,16 @@ nav ul {
     position: relative;
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: #1d5c2e;
+    background-color: #98A321;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+}
+
+#forms:hover {
+    background-color: #B8483B;
 }
 
 /* Linha do tempo */
@@ -196,11 +199,12 @@ nav ul {
 }
 
 .quemsoueu {
-    background: #ffffff;
+    background: #e8f0fb;
     padding: 20px;
-    box-shadow: 3px 3px 15px rgba(146, 139, 128, 0);
-    border-radius: 20px;
+    box-shadow: 3px 3px 15px #1e3a6196;
+    border-radius: 0px;
     margin-bottom: 30px;
+    margin: 20px;
 }
 
 .homeul {
@@ -213,20 +217,23 @@ nav ul {
 /*Parametro dos links da nav bar*/
 .linknavbar {
     font-style: normal;
+    font-weight: normal;
     display: flex;
-    color: white;
+    color: black;
     text-align: center;
     text-decoration: none;
     padding: 14px 16px;
     font-family: "montserrat", sans-serif;
     margin: 10px;
-    background-color: #207637;
+    background-color: #98A321;
     border-radius: 10px;
+    box-shadow: 1px 1px 10px #494e106b;
 }
 
 /*Parametros dos links na lista de itens da nav-bar*/
 .linknavbar:hover {
-    background-color: #5C411D;
+    background-color: #B8483B;
+    text-decoration: none;
     border-radius: 10px;
     color: white;
     box-shadow: 1px 1px 8px black;
@@ -253,6 +260,7 @@ nav ul {
     text-align: center;
     transition: background 0.3s ease;
     display: none;
+    z-index: 10;
     /* Oculto até a rolagem */
 }
 
@@ -308,11 +316,11 @@ input, textarea {
 }
 
 .carousel-control-prev {
-    background-color: #00000017;
+    background-color: #00000019;
 }
 
 .carousel-control-next {    
-    background-color: #00000017;
+    background-color: #00000019;
 }
 
 .video-container {
@@ -332,11 +340,61 @@ input, textarea {
     height: 100%;
 }
 
+ /* Estilos do dropdown */
+ .dropdown {
+    position: relative;
+    display: block;
+    margin-bottom: 30px;
+}
+
+.dropdown-content {
+    display: none;
+    position: relative;
+    max-width: 100%;
+    padding: 20px;
+    z-index: 2;
+    border-radius: 5px;
+    margin: auto;
+    margin-bottom: 30px;
+    margin-top: 5px;
+}
+
+/* Estilos do formulário */
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #98A321;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #B8483B;
+}
+
 /* Rodapé */
 footer {
-    background-color: #1d5c2e;
+    background-color: #9FB83B;
     color: white;
     padding: 10px;
     text-align: center;
     margin-top: 20px;
+}
+
+footer p {
+    margin: auto;
 }
